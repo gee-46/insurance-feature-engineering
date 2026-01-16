@@ -41,6 +41,14 @@ Use case: Preprocessing step for predicting insurance charges using machine lear
 ## Dataset
 Source file: `insurance.csv`
 
+Short answer — it's a per-person medical-insurance dataset used to build and evaluate models that predict insurance charges. Each row is an individual and the columns are demographic / health features (age, sex, BMI, number of children, smoker status, region) plus the target charges. Typical uses:
+
+Exploratory data analysis to understand distributions and relationships
+Feature engineering (e.g., BMI bins, smoker flag, one-hot regions)
+Statistical tests (correlations, chi-square)
+Training regression models to predict individual insurance cost (linear regression, random forest, XGBoost, etc.)
+Teaching / demos because it's small and interpretable
+
 Columns:
 - `age` — age of the individual
 - `sex` — male / female
