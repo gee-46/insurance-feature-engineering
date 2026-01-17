@@ -1,180 +1,160 @@
-# 🏥 Insurance Cost Analysis & Feature Engineering
-Real-World Exploratory Data Analysis • Statistical Insights • ML-Ready Dataset
+# 🧠 Feature Engineering Portfolio — Healthcare Datasets
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange)](https://jupyter.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
+**Real-World Feature Engineering • Exploratory Data Analysis • Statistical Validation • ML-Ready Pipelines**
 
-A focused data-analysis project that inspects factors influencing medical insurance charges, applies feature engineering, performs statistical testing, and produces a cleaned, ML-ready dataset for [...]
+**Python • Pandas • NumPy • Scikit-learn • Jupyter Notebook**  
+**License: MIT**
 
 ---
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Dataset](#dataset)
-- [What I Built](#what-i-built)
-- [Notebook & Project Structure](#notebook--project-structure)
-- [How to Run (Locally)](#how-to-run-locally)
-- [Key Methods & Techniques](#key-methods--techniques)
-- [Key Findings & Insights](#key-findings--insights)
-- [Deliverables](#deliverables)
-- [Future Work](#future-work)
-- [Author](#author)
-- [License](#license)
+## 📌 Repository Overview
+This repository is a **feature-engineering portfolio** focused on transforming real-world healthcare datasets into **machine-learning-ready** formats.
+
+Each notebook demonstrates how raw medical data is systematically processed through:
+
+- **Exploratory Data Analysis (EDA)**
+- **Data cleaning & missing-value handling**
+- **Domain-driven feature engineering**
+- **Statistical testing**
+- **Outlier handling**
+- **Feature scaling**
+- **Final ML-ready dataset preparation**
+
+> Rather than only training models, this repo emphasizes the most critical stage of any ML system: **feature engineering**.
 
 ---
 
-## Project Overview
+## 📂 Projects in this Repository
 
-This project represents the foundational stage of a machine learning pipeline. The notebook transforms raw insurance data into a structured, ML-ready format through advanced EDA, feature engineering, statistical validation, and standardization. These steps are critical for building reliable predictive models. The resulting dataset is optimized for training regression algorithms to estimate medical insurance charges, positioning this project as a practical bridge between data analysis and machine learning deployment.
-
-Insurance costs reflect demographic, lifestyle, and regional factors. This project investigates a real-world insurance dataset to:
-- Discover patterns and distributions
-- Engineer features that better capture health & risk signals
-- Validate relationships with statistical tests
-- Produce a cleaned, scaled dataset ready for regression models
-
-Use case: Preprocessing step for predicting insurance charges using machine learning.
+| Project | Notebook | Problem Type | Focus | Link |
+|---|---:|:---:|---|---|
+| 🏥 **Insurance Cost Feature Engineering** | `Insurance.ipynb` | Regression | **Risk factors & cost-driven features** | [Open Insurance.ipynb](https://github.com/gee-46/feature-engineering/blob/main/Insurance.ipynb) |
+| ❤️ **Heart Disease Feature Engineering** | `Heart.ipynb` | Classification | **Medical risk indicators & heart-health features** | [Open Heart.ipynb](https://github.com/gee-46/feature-engineering/blob/main/Heart.ipynb) |
 
 ---
 
-## Dataset
-Source file: `insurance.csv`
+## 🏥 Project 1 — Insurance Cost Analysis & Feature Engineering
+**Goal:** Transform raw insurance records into a structured dataset optimized for regression models predicting medical charges.
 
-Short answer — it's a per-person medical-insurance dataset used to build and evaluate models that predict insurance charges. Each row is an individual and the columns are demographic / health features (age, sex, BMI, number of children, smoker status, region) plus the target charges. Typical uses:
+**Dataset:** Per-person medical insurance data including:
+`age, sex, bmi, children, smoker, region → charges (target)`
 
-Exploratory data analysis to understand distributions and relationships
-Feature engineering (e.g., BMI bins, smoker flag, one-hot regions)
-Statistical tests (correlations, chi-square)
-Training regression models to predict individual insurance cost (linear regression, random forest, XGBoost, etc.)
-Teaching / demos because it's small and interpretable
-
-Columns:
-- `age` — age of the individual
-- `sex` — male / female
-- `bmi` — body mass index
-- `children` — number of dependents
-- `smoker` — yes / no
-- `region` — residential region
-- `charges` — insurance cost (target)
-
----
-
-## What I Built
-- Comprehensive Exploratory Data Analysis (EDA)
-  - Distributions, boxplots, and countplots for key variables
-- Feature engineering
-  - Binary encodings: `is_female`, `is_smoker`
-  - Region one-hot encoding: `region_northwest`, `region_southeast`, `region_southwest`, `region_northeast` (or equivalent)
-  - BMI categorical bins: `underweight`, `normal`, `overweight`, `obese`
-- Data cleaning & transformation
-  - Removed redundant categorical columns and kept model-friendly numeric features
-- Feature scaling
-  - StandardScaler applied to numeric features (age, bmi, children, charges)
-- Statistical analysis
+**Key work done**
+- **Comprehensive EDA** (distributions, outliers, correlations)
+- **Feature engineering**
+  - Binary health indicators (e.g., **smoker** flag)
+  - **One-hot encoding** for region
+  - **BMI risk categorization** (underweight, normal, overweight, obese)
+- **Statistical testing**
   - Pearson correlation (numeric relationships)
   - Chi-square tests (categorical dependencies)
-- Final ML-ready dataset prepared for regression experiments
+- **Data standardization** using `StandardScaler`
+
+**Outcome:** A cleaned and engineered dataset suitable for:
+- **Linear Regression**
+- **Random Forest**
+- **Gradient Boosting / XGBoost**
 
 ---
 
-## Notebook & Project Structure
+## ❤️ Project 2 — Heart Disease Feature Engineering Pipeline
+**Goal:** Engineer medically meaningful features to improve heart disease classification models.
+
+**Dataset:** Clinical heart-health attributes including:
+`Age, RestingBP, Cholesterol, MaxHR, FastingBS, Oldpeak, ECG results, chest pain type, exercise angina → HeartDisease (target)`
+
+**Key work done**
+- **Data cleaning & missing-value handling**
+- **Boolean and numerical feature processing**
+- **Medical domain-driven feature creation**
+  - **High blood pressure** indicator
+  - **High cholesterol** indicator
+  - **Low maximum heart rate** flag
+  - **Heart stress index**
+  - **Age risk banding**
+- **Outlier handling** using IQR
+- **Feature scaling** using `StandardScaler`
+- **Feature selection** using statistical methods
+
+**Outcome:** A structured dataset optimized for:
+- **Logistic Regression**
+- **Random Forest**
+- **Support Vector Machines**
+- **Neural Networks**
+
+---
+
+## 🛠 Core Techniques Demonstrated
+- **Exploratory Data Analysis (EDA)**
+- **Feature encoding** (binary, one-hot, binning)
+- **Domain-based feature engineering**
+- **Missing-value imputation**
+- **Outlier treatment (IQR)**
+- **Feature scaling**
+- **Statistical validation**
+- **Feature selection**
+- **ML-ready pipeline design**
+
+---
+
+## 🗂 Suggested Repository Structure
 ```
-Insurance-Analysis/
-├─ Insurance.ipynb        # Main Jupyter notebook (EDA, FE, analysis)
-├─ insurance.csv          # Source dataset
-└─ README.md              # This file
-```
-
-Notebook sections:
-1. Data loading & inspection
-2. EDA (plots and descriptive stats)
-3. Feature engineering & encoding
-4. Data cleaning & scaling
-5. Statistical testing (Pearson, Chi-square)
-6. Final dataset export and summary
-
----
-
-## How to Run (Locally)
-
-1. Clone the repo
-   ```bash
-   git clone https://github.com/gee-46/ML-2-.git
-   cd ML-2-
-   ```
-
-2. Create a virtual environment and install dependencies
-   ```bash
-   python -m venv venv
-   source venv/bin/activate    # macOS / Linux
-   venv\Scripts\activate       # Windows
-
-   pip install -r requirements.txt
-   ```
-   If there is no requirements file, install the typical stack:
-   ```bash
-   pip install pandas numpy matplotlib seaborn scikit-learn scipy jupyter
-   ```
-
-3. Start Jupyter and open the notebook
-   ```bash
-   jupyter notebook Insurance.ipynb
-   ```
-
-4. Inspect or re-run cells to reproduce preprocessing and export the final dataset.
-
-Quick snippet to preview the dataset:
-```python
-import pandas as pd
-df = pd.read_csv("insurance.csv")
-df.head()
+Feature-Engineering/
+│
+├── Insurance.ipynb
+├── Heart.ipynb
+├── data/
+│   ├── insurance.csv
+│   └── heart.csv
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## Key Methods & Techniques
-- EDA: histograms, KDEs, boxplots, countplots
-- Feature engineering: binary flags, one-hot encoding, BMI bucketing
-- Scaling: StandardScaler for numeric features
-- Statistical testing:
-  - Pearson correlation matrix for numeric features vs `charges`
-  - Chi-square test for categorical feature dependency on binned charges
-- Output: cleaned DataFrame with only numeric/encoded columns + target
+## ⚙️ How to Run Locally
+```bash
+git clone https://github.com/gee-46/feature-engineering.git
+cd feature-engineering
+
+# Create environment & install dependencies
+pip install pandas numpy matplotlib seaborn scikit-learn scipy jupyter
+
+# Launch notebook server
+jupyter notebook
+```
+
+Open either:
+- **Insurance.ipynb**
+- **Heart.ipynb**
 
 ---
 
-## Key Findings & Insights (Summary)
-- Smoking status is typically one of the strongest predictors of charges.
-- Age and BMI exhibit positive relationships with insurance charges; higher age/BMI commonly associates with higher charges.
-- Region and sex show smaller but potentially meaningful effects after encoding.
-- Engineered features (BMI categories, smoker flag, region one-hot) improve interpretability and model input quality.
+## 🎯 Why this repository?
+This repo demonstrates the real foundation of machine learning systems — **turning messy, real-world medical data into reliable, interpretable, machine-learning-ready features**.
 
-Note: Specific numeric results, charts, and p-values are available in `Insurance.ipynb` for reproducibility.
-
----
-
-## Deliverables
-- `Insurance.ipynb` — full analysis, visualizations, and transformations
-- `insurance.csv` — original dataset
-- A final cleaned, ML-ready DataFrame exported (e.g., `insurance_cleaned.csv`) — check the notebook for the exact filename
+It is intended as a practical reference for:
+- **ML beginners** learning preprocessing
+- **Students** building strong project portfolios
+- **Healthcare-focused ML experimentation**
 
 ---
 
-## Future Work
-- Train regression models: Linear Regression, Random Forest, XGBoost
-- Hyperparameter tuning & cross-validation
-- Model evaluation: R², MAE, RMSE
-- Feature importance and SHAP analysis
-- Build a Streamlit app for interactive predictions and demo
+## 🚀 Future Work
+- **End-to-end** model training & evaluation notebooks
+- **Cross-validation & hyperparameter tuning**
+- **Feature-importance & SHAP analysis**
+- **Deployment-ready preprocessing pipelines**
+- **Streamlit demo apps**
 
 ---
 
-## Author
-Gautam N Chipkar  
-AI & Data Science Engineering Student — Python | Data Analysis | Machine Learning
+## 👤 Author
+**Gautam N Chipkar**  
+AI & Data Science Engineering Student  
+**Python • Data Analysis • Machine Learning**
 
 ---
 
-## License
-This project is released under the MIT License. See [LICENSE](./LICENSE) for details.
+## 📜 License
+This project is released under the **MIT License**. See the `LICENSE` file for details.
